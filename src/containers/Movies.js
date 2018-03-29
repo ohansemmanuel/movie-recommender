@@ -23,6 +23,7 @@ const Movies = ({ movies }) => {
                 name={name}
                 duration={duration}
                 year={year}
+                showDetails="false"
               />
             </Link>
           );

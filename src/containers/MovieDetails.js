@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { selectMovie } from "../actions";
-import { StyledMovie } from "../components/Styled";
 import Header from "../components/Header";
+import Movie from "../components/Movie";
 import movieSelector from "../selectors/selectedMovie";
 
-class Movie extends Component {
+class MovieDetails extends Component {
   constructor(props) {
     super(props);
     this._id = this.props.match.params.id; //props passed from <Route/>
@@ -22,24 +22,23 @@ class Movie extends Component {
     return (
       <div>
         <Header isCollapsed="true" />
-        <StyledMovie>
-          <img src={poster} alt="" className="movie__poster" />
-          <div className="movie__title">{name}</div>
-          <div className="movie__info">
-            <span className="movie__info_length">{duration}</span>
-            <span className="movie__info_year">{year}</span>
-          </div>
+        <Movie
+          showDetails="true"
+          name={name}
+          poster={poster}
+          duration={duration}
+          year={year}
+        >
           <div className="desc">{details}</div>
-
           <a
             className="play"
             href={trailer}
             target="_blank"
             rel="noopener noreferrer"
           >
-            play movie
+            watch trailer
           </a>
-        </StyledMovie>
+        </Movie>
       </div>
     );
   }
@@ -51,4 +50,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { selectMovie })(Movie);
+export default connect(mapStateToProps, { selectMovie })(MovieDetails);
