@@ -12,15 +12,25 @@ const appState = (state = {}, action) => {
       return state;
   }
 };
+
 const movies = (state = _.mapKeys(moviesData, "id"), action) => {
   switch (action.type) {
-    case "test":
-      break;
+    case actions.MOVIE_RATED:
+      const { movieId, rating } = action.payload;
+      console.log("reducer", action.payload);
+      return {
+        ...state,
+        [movieId]: {
+          ...state[movieId],
+          rating
+        }
+      };
 
     default:
       return state;
   }
 };
+
 const movie = (state = 1, action) => {
   switch (action.type) {
     case actions.MOVIE_SELECTED:

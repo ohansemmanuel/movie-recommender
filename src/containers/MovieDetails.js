@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactStars from "react-stars";
 import { connect } from "react-redux";
-import { selectMovie } from "../actions";
+import { selectMovie, rateMovie } from "../actions";
 import Header from "../components/Header";
 import Movie from "../components/Movie";
 import movieSelector from "../selectors/selectedMovie";
@@ -15,13 +15,16 @@ class MovieDetails extends Component {
     this.props.selectMovie(+this._id);
   }
 
-  _ratingChanged = newRating => {
-    console.log(newRating);
+  _ratingChanged = rating => {
+    this.props.rateMovie({
+      rating,
+      movieId: +this._id
+    });
   };
 
   render() {
     const {
-      movie: { name, poster, duration, trailer, details, year }
+      movie: { name, poster, duration, trailer, details, rating, year }
     } = this.props;
 
     return (
@@ -48,6 +51,7 @@ class MovieDetails extends Component {
             onChange={this._ratingChanged}
             size={24}
             color2={"#ffd700"}
+            value={rating}
           />
         </Movie>
       </div>
@@ -61,4 +65,6 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { selectMovie })(MovieDetails);
+export default connect(mapStateToProps, { selectMovie, rateMovie })(
+  MovieDetails
+);
