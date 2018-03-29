@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Flex, Center } from "./Layout";
+import { Flex } from "./Layout";
 
 export const StyledMovieContainer = styled.section`
   width: 640px;
@@ -17,4 +17,27 @@ export const StyledHeader = Flex.extend`
     margin: 0 auto;
   }
 `;
+
+export const StyledMovie = styled.div`
+  padding: 10px;
+  cursor: pointer;
+
+  .movie__poster {
+    width: 100%;
+    margin-bottom: 6px;
+    border-radius: 4px;
+  }
+
+  .movie__title {
+    color: #525661;
+    margin-bottom: 4px;
+    font-size: 16px;
+  }
+
+  .movie__info {
+    font-size: 11px;
+    opacity: 0.8;
+  }
+`;
+
 export const StyledBody = styled.main``;
