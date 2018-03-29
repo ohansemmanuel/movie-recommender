@@ -1,8 +1,8 @@
 import React from "react";
 import { Center } from "../components/Layout";
 import { StyledMovieContainer } from "../components/Styled";
+import Body from "./Body";
 import Header from "../components/Header";
-import Body from "../components/Body"
 import theme from "../constants/theme";
 
 const App = props => {

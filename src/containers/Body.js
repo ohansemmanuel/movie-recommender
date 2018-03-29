@@ -1,7 +1,7 @@
 import React from "react";
 import _ from "lodash";
-import { Flex } from "./Layout";
-import Movie from "./Movie";
+import { Flex } from "../components/Layout";
+import Movie from "../components/Movie";
 import { connect } from "react-redux";
 
 const Body = ({ movies }) => {
