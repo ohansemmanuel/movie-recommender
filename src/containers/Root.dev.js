@@ -10,7 +10,7 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <div>
       <Route exact path="/" component={App} />
-      <Route path="/movies/:name" component={Movie} />
+      <Route path="/movies/:id" component={Movie} />
       <DevTools />
     </div>
   </Provider>

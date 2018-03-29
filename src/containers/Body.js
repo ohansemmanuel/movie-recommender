@@ -1,5 +1,6 @@
 import React from "react";
 import _ from "lodash";
+import { Link } from "react-router-dom";
 import { Flex } from "../components/Layout";
 import Movie from "../components/Movie";
 import { connect } from "react-redux";
@@ -13,13 +14,15 @@ const Body = ({ movies }) => {
     <Flex>
       {randomMovieList.map(({ id, poster, name, duration, year }) => {
         return (
-          <Movie
-            key={id}
-            poster={poster}
-            name={name}
-            duration={duration}
-            year={year}
-          />
+          <Link to={`/movies/${id}`}>
+            <Movie
+              key={id}
+              poster={poster}
+              name={name}
+              duration={duration}
+              year={year}
+            />
+          </Link>
         );
       })}
     </Flex>
