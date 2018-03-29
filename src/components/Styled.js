@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../constants/theme";
 import { Flex } from "./Layout";
 
 export const StyledMovieContainer = styled.section`
@@ -23,7 +24,7 @@ export const StyledMovie = styled.div`
   cursor: pointer;
 
   .movie__poster {
-    width: 127px;
+    width: ${theme.movieWidth};
     height: 191px;
     margin-bottom: 6px;
     border-radius: 4px;
@@ -33,6 +34,10 @@ export const StyledMovie = styled.div`
     color: #525661;
     margin-bottom: 4px;
     font-size: 16px;
+    width: ${theme.movieWidth};
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .movie__info {
