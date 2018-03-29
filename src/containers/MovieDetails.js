@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { selectMovie } from "../actions";
+import movieSelector from "../selectors/selectedMovie";
 
 class Movie extends Component {
   constructor(props) {
@@ -12,8 +13,14 @@ class Movie extends Component {
   }
 
   render() {
-    return <div>Hola Movie!</div>;
+    return <div>{this.props.movies.name}</div>;
   }
 }
 
-export default connect(null, { selectMovie })(Movie);
+const mapStateToProps = state => {
+  return {
+    movies: movieSelector(state)
+  };
+};
+
+export default connect(mapStateToProps, { selectMovie })(Movie);
