@@ -10,7 +10,7 @@ const Body = ({ movies }) => {
   const randomMovieList = _.shuffle(movieList);
 
   return (
-    <Flex wrap="true">
+    <Flex>
       {randomMovieList.map(({ id, poster, name, duration, year }) => {
         return (
           <Movie

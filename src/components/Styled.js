@@ -23,9 +23,13 @@ export const StyledMovie = styled.div`
   cursor: pointer;
 
   .movie__poster {
-    width: 100%;
+    width: 127px;
+    height: 191px;
     margin-bottom: 6px;
     border-radius: 4px;
+    &img {
+      object-fit: cover;
+    }
   }
 
   .movie__title {
