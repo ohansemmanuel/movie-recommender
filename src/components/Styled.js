@@ -27,9 +27,6 @@ export const StyledMovie = styled.div`
     height: 191px;
     margin-bottom: 6px;
     border-radius: 4px;
-    &img {
-      object-fit: cover;
-    }
   }
 
   .movie__title {
