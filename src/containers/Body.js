@@ -14,9 +14,8 @@ const Body = ({ movies }) => {
     <Flex>
       {randomMovieList.map(({ id, poster, name, duration, year }) => {
         return (
-          <Link to={`/movies/${id}`}>
+          <Link to={`/movies/${id}`} key={id}>
             <Movie
-              key={id}
               poster={poster}
               name={name}
               duration={duration}
