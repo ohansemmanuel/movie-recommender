@@ -5,7 +5,7 @@ import { Flex } from "../components/Layout";
 import Movie from "../components/Movie";
 import { connect } from "react-redux";
 
-const Body = ({ movies }) => {
+const Movies = ({ movies }) => {
   const availableMovies = _.omitBy(movies, movie => !movie.poster);
   const movieList = _.values(availableMovies);
   const randomMovieList = _.shuffle(movieList);
@@ -32,4 +32,4 @@ function mapStateToProps({ movies }) {
   return { movies };
 }
 
-export default connect(mapStateToProps)(Body);
+export default connect(mapStateToProps)(Movies);

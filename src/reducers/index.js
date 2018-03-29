@@ -1,5 +1,6 @@
-import { combineReducers } from "redux";
 import _ from "lodash";
+import { combineReducers } from "redux";
+import * as actions from "../actions";
 import { movies as moviesData } from "../staticData";
 
 const appState = (state = {}, action) => {
@@ -20,10 +21,10 @@ const movies = (state = _.mapKeys(moviesData, "id"), action) => {
       return state;
   }
 };
-const movie = (state = {}, action) => {
+const movie = (state = 1, action) => {
   switch (action.type) {
-    case "test":
-      break;
+    case actions.MOVIE_SELECTED:
+      return action.payload;
 
     default:
       return state;

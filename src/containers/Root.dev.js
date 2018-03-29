@@ -6,10 +6,10 @@ import App from "./App";
 
 const Root = ({ store }) => (
   <Provider store={store}>
-    <div>
+    <section>
       <App />
       <DevTools />
-    </div>
+    </section>
   </Provider>
 );
 
