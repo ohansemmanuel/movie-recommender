@@ -1,7 +1,7 @@
 export const movies = [
   {
     "name": "The Sheriff 1",
-    "poster": "https://i.imgur.com/v1HSxKj.png"
+    "poster": "https://i.imgur.com/v1HSxKj.png",
     "genre": "crime, drama, western",
     "year": "1971",
     "duration": "1h 13min",
@@ -76,7 +76,7 @@ export const movies = [
   },
   {
     "name": "Motocycle Gang",
-    "poster": "https://i.imgur.com/nTX4Sn4.png"
+    "poster": "https://i.imgur.com/nTX4Sn4.png",
     "genre": "crime drama, western",
     "year": "1994",
     "duration": "1h 24min",
@@ -86,13 +86,13 @@ export const movies = [
   },
   {
     "name": "Zombies",
-    "poster": "https://i.imgur.com/OSVephR.png"
+    "poster": "https://i.imgur.com/OSVephR.png",
     "genre": "crime drama, western",
     "year": "2018",
     "duration": "1h 34min",
     "trailer": "https://youtu.be/jh7s8P-F4p8",
     "details": "Students from Zombietown are transferred to a high school in a suburban town preoccupied with uniformity, traditions and pep rallies.",
-    "substitute": "Surrounded by Zombies"
+    "substitute": "Surrounded by Zombies",
     "id": "10"
   },
   {
@@ -109,7 +109,7 @@ export const movies = [
   },
   {
     "name": "Unearthed",
-    "poster": "https://i.imgur.com/TX3pjMm.png"
+    "poster": "https://i.imgur.com/TX3pjMm.png",
     "genre": "horror",
     "year": "2007",
     "duration": "1h 33min",
@@ -129,7 +129,7 @@ export const movies = [
   },
   {
     "name": "The Spy Family",
-    "poster": "https://i.imgur.com/pCiWbmx.png"
+    "poster": "https://i.imgur.com/pCiWbmx.png",
     "genre": "spy drama",
     "year": "2007",
     "duration": "series",
@@ -140,7 +140,7 @@ export const movies = [
   },
   {
     name: "The Will Fight Those Aliens",
-    poster: "https://i.imgur.com/LyroXVM.png"
+    poster: "https://i.imgur.com/LyroXVM.png",
     genre: "sci-fi, action",
     year: "2007",
     duration: "1h 34min",
@@ -171,7 +171,7 @@ export const movies = [
   },
   {
     name: "Bad Teacher",
-    poster: "https://i.imgur.com/6u3hY9R.png"
+    poster: "https://i.imgur.com/6u3hY9R.png",
     genre: "comedy",
     year: "2011",
     duration: "1h 32min",

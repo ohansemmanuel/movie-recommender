@@ -1,7 +1,11 @@
-:root {
-  color: black;
+*::before,
+*::after,
+* {
+  box-sizing: border-box;
 }
-
 #root {
   height: 100vh;
+  color: #8b9095;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
 }
