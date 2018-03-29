@@ -17,6 +17,9 @@ export const StyledHeader = Flex.extend`
   .header__item:nth-child(2) {
     margin: 0 auto;
   }
+  .header__item.header--is-closed {
+    margin-left: auto;
+  }
 `;
 
 export const StyledMovie = styled.div`

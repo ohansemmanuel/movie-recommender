@@ -3,6 +3,7 @@ import _ from "lodash";
 import { Link } from "react-router-dom";
 import { Flex } from "../components/Layout";
 import Movie from "../components/Movie";
+import Header from "../components/Header";
 import { connect } from "react-redux";
 
 const Movies = ({ movies }) => {
@@ -11,20 +12,23 @@ const Movies = ({ movies }) => {
   const randomMovieList = _.shuffle(movieList);
 
   return (
-    <Flex>
-      {randomMovieList.map(({ id, poster, name, duration, year }) => {
-        return (
-          <Link to={`/movies/${id}`} key={id}>
-            <Movie
-              poster={poster}
-              name={name}
-              duration={duration}
-              year={year}
-            />
-          </Link>
-        );
-      })}
-    </Flex>
+    <div>
+      <Header />
+      <Flex>
+        {randomMovieList.map(({ id, poster, name, duration, year }) => {
+          return (
+            <Link to={`/movies/${id}`} key={id}>
+              <Movie
+                poster={poster}
+                name={name}
+                duration={duration}
+                year={year}
+              />
+            </Link>
+          );
+        })}
+      </Flex>
+    </div>
   );
 };
 
