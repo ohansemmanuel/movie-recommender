@@ -52,10 +52,8 @@ export const Flex = styled.div`
   }};
   align-items: center;
   width: 100%;
-  height: 100%;
-  & img {
-    align-self: flex-start;
-  }
+  height: ${props => (props.height ? props.height : "initial")}
+  overflow-x: auto;
 `;
 
 const bounceInLeft = keyframes`
