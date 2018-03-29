@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactStars from "react-stars";
 import { connect } from "react-redux";
 import { selectMovie } from "../actions";
 import Header from "../components/Header";
@@ -13,6 +14,10 @@ class MovieDetails extends Component {
   componentWillMount() {
     this.props.selectMovie(+this._id);
   }
+
+  _ratingChanged = newRating => {
+    console.log(newRating);
+  };
 
   render() {
     const {
@@ -38,6 +43,12 @@ class MovieDetails extends Component {
           >
             watch trailer
           </a>
+          <ReactStars
+            count={5}
+            onChange={this._ratingChanged}
+            size={24}
+            color2={"#ffd700"}
+          />
         </Movie>
       </div>
     );

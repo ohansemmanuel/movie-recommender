@@ -20,6 +20,9 @@ export const StyledHeader = Flex.extend`
   .header__item.header--is-closed {
     margin-left: auto;
   }
+  svg {
+    cursor: pointer;
+  }
 `;
 
 export const StyledMovie = styled.div`
