@@ -24,6 +24,7 @@ export default function formatMovieRatings(
     console.error(
       "The number of arguments passed into formatMovieRatings should be 3"
     );
+    return;
   }
   let result = {};
   const MOVIE_ARR = _.values(movies);
