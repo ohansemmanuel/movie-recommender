@@ -8,8 +8,11 @@ import Header from "../components/Header";
 import { connect } from "react-redux";
 
 const Movies = ({ movies }) => {
-  const availableMovies = _.omitBy(movies, movie => !movie.poster);
-  const movieList = _.values(availableMovies);
+  //remove movies without a poster image
+  const usableMovies = _.omitBy(movies, movie => !movie.poster);
+  //convert array to object
+  const movieList = _.values(usableMovies);
+  //randomize the order of the movie list
   const randomMovieList = _.shuffle(movieList);
 
   return (
