@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import theme from "../constants/theme";
+import { styledMovie } from "../utils/styled";
 import { Flex } from "./Layout";
 
 export const StyledMovieContainer = styled.section`
+  position: relative;
   width: 640px;
   height: 390px;
   background: white;
@@ -34,6 +36,7 @@ export const StyledMovie = styled.div`
     height: 191px;
     margin-bottom: 6px;
     border-radius: 4px;
+    ${props => styledMovie.moviePosterWithDetails(props.showDetails)};
   }
 
   .movie__title {

@@ -2,6 +2,7 @@ import React from "react";
 import _ from "lodash";
 import { Link } from "react-router-dom";
 import { Flex } from "../components/Layout";
+import { dont_show_details } from "../constants/strings";
 import Movie from "../components/Movie";
 import Header from "../components/Header";
 import { connect } from "react-redux";
@@ -23,7 +24,7 @@ const Movies = ({ movies }) => {
                 name={name}
                 duration={duration}
                 year={year}
-                showDetails="false"
+                showDetails={dont_show_details}
               />
             </Link>
           );

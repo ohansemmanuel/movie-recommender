@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactStars from "react-stars";
 import { connect } from "react-redux";
 import { selectMovie, rateMovie } from "../actions";
+import { show_details } from "../constants/strings";
 import Header from "../components/Header";
 import Movie from "../components/Movie";
 import movieSelector from "../selectors/selectedMovie";
@@ -31,11 +32,11 @@ class MovieDetails extends Component {
       <div>
         <Header isCollapsed="true" />
         <Movie
-          showDetails="true"
           name={name}
           poster={poster}
           duration={duration}
           year={year}
+          showDetails={show_details}
         >
           <div className="desc">{details}</div>
           <a

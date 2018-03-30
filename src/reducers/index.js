@@ -17,7 +17,6 @@ const movies = (state = _.mapKeys(moviesData, "id"), action) => {
   switch (action.type) {
     case actions.MOVIE_RATED:
       const { movieId, rating } = action.payload;
-      console.log("reducer", action.payload);
       return {
         ...state,
         [movieId]: {
