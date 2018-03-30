@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 const Movies = ({ movies }) => {
   //remove movies without a poster image
   const usableMovies = _.omitBy(movies, movie => !movie.poster);
-  //convert array to object
+  //convert object to an array
   const movieList = _.values(usableMovies);
   //randomize the order of the movie list
   const randomMovieList = _.shuffle(movieList);
