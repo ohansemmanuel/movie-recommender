@@ -1,16 +1,16 @@
 import React from "react";
 import _ from "lodash";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { Flex } from "../components/Layout";
 import { dont_show_details } from "../constants/strings";
 import Movie from "../components/Movie";
 import Header from "../components/Header";
 import { StyledButton } from "../components/Styled";
-import formatMovieRatings, { CURRENT_USER } from "../utils/formatMovieRatings";
+import formatMovieRatings from "../utils/formatMovieRatings";
 import { connect } from "react-redux";
+import { recommendMovies } from "../actions";
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, recommendMovies }) => {
   //remove movies without a poster image
   const usableMovies = _.omitBy(movies, movie => !movie.poster);
   //convert object to an array
@@ -19,24 +19,8 @@ const Movies = ({ movies }) => {
   const randomMovieList = _.shuffle(movieList);
 
   const getRecommendations = () => {
-    const ratingsData = formatMovieRatings(undefined, undefined, movies);
-    //test axios request.
-    axios
-      .post(
-        `http://localhost:5000/recommend/movies/${CURRENT_USER}`,
-        ratingsData,
-        {
-          headers: {
-            "Content-Type": "application/json"
-          }
-        }
-      )
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(err => {
-        console.log(err);
-      }); //end catch errors
+    const ratings = formatMovieRatings(undefined, undefined, movies);
+    recommendMovies(ratings);
   };
 
   return (
@@ -72,4 +56,4 @@ function mapStateToProps({ movies }) {
   return { movies };
 }
 
-export default connect(mapStateToProps)(Movies);
+export default connect(mapStateToProps, { recommendMovies })(Movies);

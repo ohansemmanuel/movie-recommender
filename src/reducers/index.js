@@ -24,7 +24,14 @@ const movies = (state = _.mapKeys(moviesData, "id"), action) => {
           rating
         }
       };
-
+    
+    case actions.RECOMMEND_MOVIES:
+      const {data} = action.payload
+      if(data) {
+        console.log('in reducer for recommend!')
+        return state;
+      }
+      return state  
     default:
       return state;
   }
