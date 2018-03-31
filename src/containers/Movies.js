@@ -6,6 +6,7 @@ import { dont_show_details } from "../constants/strings";
 import Movie from "../components/Movie";
 import Header from "../components/Header";
 import { StyledButton } from "../components/Styled";
+import formatMovieRatings from "../utils/formatMovieRatings";
 import { connect } from "react-redux";
 
 const Movies = ({ movies }) => {
@@ -15,6 +16,10 @@ const Movies = ({ movies }) => {
   const movieList = _.values(usableMovies);
   //randomize the order of the movie list
   const randomMovieList = _.shuffle(movieList);
+
+  const getRecommendations = () => {
+    console.log(formatMovieRatings(undefined, undefined, movies));
+  };
 
   return (
     <div>
@@ -36,7 +41,10 @@ const Movies = ({ movies }) => {
       </Flex>
 
       <Flex justify="c">
-        <StyledButton> Get Recommended Movies </StyledButton>
+        <StyledButton onClick={getRecommendations}>
+          {" "}
+          Get Recommended Movies{" "}
+        </StyledButton>
       </Flex>
     </div>
   );

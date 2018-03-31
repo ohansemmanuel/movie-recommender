@@ -1,7 +1,7 @@
 import _ from "lodash";
 
 const START_KEY = 680; //dataset row shape
-const CURRENT_USER = "101"; //dataset has 100 users.
+const CURRENT_USER = 101; //dataset has 100 users.
 
 /**
  * Handles the formatting of User Movie Ratings data to be sent to the server.
@@ -46,7 +46,7 @@ export default function formatMovieRatings(
       },
       movie_id: {
         ...result["movie_id"],
-        [START_KEY + index]: movie.id
+        [START_KEY + index]: +movie.id
       },
       value: {
         ...result["value"],
