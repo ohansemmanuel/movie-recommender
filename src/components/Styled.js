@@ -7,9 +7,13 @@ export const StyledMovieContainer = styled.section`
   position: relative;
   width: 640px;
   height: 390px;
-  background: white;
+  background: ${theme.movieContainerBg};
   border-radius: 15px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+`;
+
+export const StyledMovieDetailsContainer = styled.div`
+  padding-left: 35%;
 `;
 
 export const StyledHeader = Flex.extend`
@@ -22,16 +26,23 @@ export const StyledHeader = Flex.extend`
   .header__item.header--is-closed {
     margin-left: auto;
   }
-  svg {
+  > a {
+    position: absolute;
+    right: 20px;
+  }
+  > *:hover {
     cursor: pointer;
+    color: #fff;
   }
 `;
 
 export const StyledMovie = styled.div`
   padding: 10px;
   cursor: pointer;
-
-  .movie__poster {
+  ${props => styledMovie.moviePosterWithoutDetails(props.showDetails)};
+  animation-delay: ${props =>
+      props.animationDelay ? props.animationDelay : "initial"}
+    .movie__poster {
     width: ${theme.movieWidth};
     height: 191px;
     margin-bottom: 6px;
@@ -42,16 +53,58 @@ export const StyledMovie = styled.div`
   .movie__title {
     color: #525661;
     margin-bottom: 4px;
-    font-size: 16px;
+    font-size: 1rem;
     width: ${theme.movieWidth};
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    ${props => styledMovie.movieTitleWithDetails(props.showDetails)};
   }
 
   .movie__info {
     font-size: 11px;
     opacity: 0.8;
+  }
+
+  .movie__desc {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .movie__play {
+    background: #eb6259;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5;
+    display: inline-block;
+    padding: 8px 17px;
+    margin: 20px 0 15px 0;
+    text-transform: uppercase;
+    z-index: 10;
+    outline: none !important;
+    cursor: pointer;
+  }
+
+  .movie__title,
+  .movie__info,
+  .movie__play,
+  .movie__desc {
+    ${props => styledMovie.movieDetailsAnim(props.showDetails)};
+  }
+  .movie__title {
+    animation-delay: 0.2s;
+  }
+  .movie__info {
+    animation-delay: 0.3s;
+  }
+  .movie__desc {
+    animation-delay: 0.4s;
+  }
+  .movie__play {
+    animation-delay: 0.5s;
   }
 `;
 
@@ -80,15 +133,13 @@ export const StyledButton = styled.button`
     width: 100%;
     height: 100%;
     background: ${props => {
-      return props.transparent
-        ? "transparent"
-        : "linear-gradient(-135deg,#3e87f6 0%,#3b84f2 30%,#3b84f2 40%,#0c49a9 90%,#0c49a9 100%)";
+      return props.transparent ? "transparent" : "#EB6259";
     }};
   }
   &:after {
     transform: scaleY(0);
     transform-origin: top;
-    background: linear-gradient(135deg, #2a628f, #4c9f70);
+    background: #ac4743;
     transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
   }
   &:hover {

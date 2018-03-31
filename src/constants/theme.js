@@ -1,6 +1,9 @@
 const theme = {
-  bodyBackground: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);",
-  movieWidth: "127px"
+  bodyBackground: "#333852",
+  movieContainerBg: "#282A31",
+  movieWidth: "127px",
+  posterExpandedWidth: "229px",
+  posterExpandedHeight: "316px"
 };
 
 export default theme;

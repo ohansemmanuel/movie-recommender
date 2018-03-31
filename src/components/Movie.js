@@ -1,8 +1,21 @@
 import React from "react";
 import { StyledMovie } from "./Styled";
 
-const Movie = ({ id, poster, name, duration, year, showDetails, children }) => (
-  <StyledMovie key={id} showDetails={showDetails}>
+const Movie = ({
+  id,
+  poster,
+  name,
+  duration,
+  year,
+  showDetails,
+  animationDelay,
+  children
+}) => (
+  <StyledMovie
+    key={id}
+    showDetails={showDetails}
+    animationDelay={animationDelay}
+  >
     <img src={poster} alt="" className="movie__poster" />
     <div className="movie__title">{name}</div>
     <div className="movie__info">

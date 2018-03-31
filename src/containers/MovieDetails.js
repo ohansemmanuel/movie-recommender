@@ -5,6 +5,7 @@ import { selectMovie, rateMovie } from "../actions";
 import { show_details } from "../constants/strings";
 import Header from "../components/Header";
 import Movie from "../components/Movie";
+import { StyledMovieDetailsContainer } from "../components/Styled";
 import movieSelector from "../selectors/selectedMovie";
 
 class MovieDetails extends Component {
@@ -29,7 +30,7 @@ class MovieDetails extends Component {
     } = this.props;
 
     return (
-      <div>
+      <StyledMovieDetailsContainer>
         <Header isCollapsed="true" />
         <Movie
           name={name}
@@ -38,9 +39,9 @@ class MovieDetails extends Component {
           year={year}
           showDetails={show_details}
         >
-          <div className="desc">{details}</div>
+          <div className="movie__desc">{details}</div>
           <a
-            className="play"
+            className="movie__play"
             href={trailer}
             target="_blank"
             rel="noopener noreferrer"
@@ -55,7 +56,7 @@ class MovieDetails extends Component {
             value={rating}
           />
         </Movie>
-      </div>
+      </StyledMovieDetailsContainer>
     );
   }
 }

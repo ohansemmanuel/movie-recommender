@@ -99,7 +99,7 @@ function renderBody(appState, randomMovieList) {
     default:
       return (
         <Flex overflow="auto">
-          {randomMovieList.map(({ id, poster, name, duration, year }) => {
+          {randomMovieList.map(({ id, poster, name, duration, year }, i) => {
             return (
               <Link to={`/movies/${id}`} key={id}>
                 <Movie
@@ -107,6 +107,7 @@ function renderBody(appState, randomMovieList) {
                   name={name}
                   duration={duration}
                   year={year}
+                  animationDelay={`${i / 10}s`}
                   showDetails={dont_show_details}
                 />
               </Link>
