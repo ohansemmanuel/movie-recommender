@@ -3,10 +3,10 @@ import { combineReducers } from "redux";
 import * as actions from "../actions";
 import { movies as moviesData } from "../staticData";
 
-const appState = (state = {}, action) => {
+const appState = (state = "", action) => {
   switch (action.type) {
-    case "test":
-      break;
+    case actions.APP_STATE:
+      return action.payload;
 
     default:
       return state;
@@ -31,6 +31,7 @@ const movies = (state = _.mapKeys(moviesData, "id"), action) => {
         return data;
       }
       return state;
+
     default:
       return state;
   }

@@ -17,14 +17,14 @@ export default function formatMovieRatings(
 ) {
   // basic type check
   if (Array.isArray(movies)) {
-    console.error("Movies passed to formatMovieRatings should NOT be an Array");
-    return;
+    throw new Error(
+      "Movies passed to formatMovieRatings should NOT be an Array"
+    );
   }
   if (arguments.length !== 3) {
-    console.error(
+    throw new Error(
       "The number of arguments passed into formatMovieRatings should be 3"
     );
-    return;
   }
   let result = {};
   const MOVIE_ARR = _.values(movies);
@@ -32,10 +32,9 @@ export default function formatMovieRatings(
 
   // any movies with ratings?
   if (MOVIE_WITH_RATINGS.length === 0) {
-    console.warn(
+    throw new Error(
       "Sorry. The movies you have passed into formatMovieRatings have NO ratings"
     );
-    return;
   }
 
   MOVIE_WITH_RATINGS.forEach((movie, index) => {

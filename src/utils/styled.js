@@ -4,12 +4,8 @@ import { keyframes } from "styled-components";
  * utils that exist (mostly) to extend certain component styles.
  */
 const rotate360 = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
   to {
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 `;
 

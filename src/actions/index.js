@@ -1,7 +1,7 @@
 export const MOVIE_SELECTED = "MOVIE_SELECTED";
 export const MOVIE_RATED = "MOVIE_RATED";
-export const RECOMMEND_MOVIES = "RECOMMEND_MOVIES" //action handled via custom middleware
-
+export const RECOMMEND_MOVIES = "RECOMMEND_MOVIES";
+export const APP_STATE = "APP_STATE";
 
 export function selectMovie(id) {
   return {
@@ -21,11 +21,18 @@ export function rateMovie({ rating, movieId }) {
 }
 
 export function recommendMovies(ratings) {
-    return {
-        type: RECOMMEND_MOVIES,
-        payload: {
-            ratings,
-            [RECOMMEND_MOVIES]: RECOMMEND_MOVIES
-        }
+  return {
+    type: RECOMMEND_MOVIES,
+    payload: {
+      ratings,
+      [RECOMMEND_MOVIES]: RECOMMEND_MOVIES
     }
+  };
+}
+
+export function setAppState(appState) {
+  return {
+    type: APP_STATE,
+    payload: appState
+  };
 }

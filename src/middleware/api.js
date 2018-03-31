@@ -1,9 +1,13 @@
 //centralize API calls here.
 import axios from "axios";
 import _ from "lodash";
-import { RECOMMEND_MOVIES } from "../actions";
+import { RECOMMEND_MOVIES, APP_STATE } from "../actions";
 import { CURRENT_USER } from "../utils/formatMovieRatings";
 import { movies as defaultMoviesState } from "../staticData";
+import {
+  recommendation_successful,
+  recommendation_failed
+} from "../constants/strings";
 
 /**
  * @todo Serve this url from an env var.
@@ -22,19 +26,35 @@ export function getRecommendations({ getState, dispatch }) {
   return next => action => {
     if (action.payload[RECOMMEND_MOVIES] === RECOMMEND_MOVIES) {
       const url = `${BASE_URL}/recommend/movies/${CURRENT_USER}`;
+
+      //call this after a failed or successful attempt
+      const dispatchAppState = appState =>
+        dispatch({
+          type: APP_STATE,
+          payload: appState
+        });
+      //call this when we've got data.
       const dispatchData = data => {
+        /**
+         * @todo 4. above
+         * **/
+
         dispatch({
           type: action.type,
           payload: {
             data
           }
         });
+        dispatchAppState(recommendation_successful);
       };
 
       makeRequest(url, action.payload.ratings)
         .then(data => formatData(data))
         .then(data => dispatchData(data))
-        .catch(err => console.error(err));
+        .catch(err => {
+          dispatchAppState(recommendation_failed);
+          console.error(err);
+        });
     }
     next(action);
   };
