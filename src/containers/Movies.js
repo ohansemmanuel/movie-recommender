@@ -11,7 +11,8 @@ import { connect } from "react-redux";
 import { recommendMovies, setAppState } from "../actions";
 import {
   is_recommending_movies,
-  recommendation_failed
+  recommendation_failed,
+  recommendation_successful
 } from "../constants/strings";
 
 /**
@@ -37,6 +38,9 @@ const Movies = ({ movies, recommendMovies, appState, setAppState }) => {
        * @todo - show error via toast
        */
       console.error(err);
+      alert(
+        "Please click on the movie posters and rate at least 3 movies to get a personalized oldies recommendation"
+      );
     }
 
     if (ratings) {
@@ -119,6 +123,9 @@ function renderFooter(appState, getRecommendations) {
       return null;
 
     case recommendation_failed:
+      return null;
+
+    case recommendation_successful:
       return null;
 
     default:
