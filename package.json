@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "css.escape": "^1.5.1",
     "lodash": "^4.17.5",
     "prop-types": "^15.6.1",

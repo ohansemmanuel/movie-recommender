@@ -1,12 +1,13 @@
 import React from "react";
 import _ from "lodash";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { Flex } from "../components/Layout";
 import { dont_show_details } from "../constants/strings";
 import Movie from "../components/Movie";
 import Header from "../components/Header";
 import { StyledButton } from "../components/Styled";
-import formatMovieRatings from "../utils/formatMovieRatings";
+import formatMovieRatings, { CURRENT_USER } from "../utils/formatMovieRatings";
 import { connect } from "react-redux";
 
 const Movies = ({ movies }) => {
@@ -18,7 +19,24 @@ const Movies = ({ movies }) => {
   const randomMovieList = _.shuffle(movieList);
 
   const getRecommendations = () => {
-    console.log(formatMovieRatings(undefined, undefined, movies));
+    const ratingsData = formatMovieRatings(undefined, undefined, movies);
+    //test axios request.
+    axios
+      .post(
+        `http://localhost:5000/recommend/movies/${CURRENT_USER}`,
+        ratingsData,
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      )
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      }); //end catch errors
   };
 
   return (
