@@ -5,7 +5,10 @@ import { RECOMMEND_MOVIES } from "../actions";
 import { CURRENT_USER } from "../utils/formatMovieRatings";
 import { movies as defaultMoviesState } from "../staticData";
 
-const BASE_URL = `http://localhost:5000/recommend/movies/`;
+/**
+ * @todo Serve this url from an env var.
+ */
+const BASE_URL = "https://recommender-service.herokuapp.com";
 
 /*
   1. This custom middleware will intercept actions with a payload 
@@ -18,7 +21,7 @@ const BASE_URL = `http://localhost:5000/recommend/movies/`;
 export function getRecommendations({ getState, dispatch }) {
   return next => action => {
     if (action.payload[RECOMMEND_MOVIES] === RECOMMEND_MOVIES) {
-      const url = `${BASE_URL}${CURRENT_USER}`;
+      const url = `${BASE_URL}/recommend/movies/${CURRENT_USER}`;
       const dispatchData = data => {
         dispatch({
           type: action.type,
@@ -64,6 +67,7 @@ function formatData(data) {
       _.includes(movieTitles, movie.name)
     );
 
+    //compute new movie state
     _.each(filteredMovies, movie => {
       newMovieState = {
         ...newMovieState,
