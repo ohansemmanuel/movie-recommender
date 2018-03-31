@@ -46,7 +46,7 @@ const Movies = ({ movies, recommendMovies, appState, setAppState }) => {
   };
 
   return (
-    <div>
+    <div style={{ height: "100%" }}>
       {renderHeader(appState)}
       {renderBody(appState, randomMovieList)}
       {renderFooter(appState, getRecommendations)}
@@ -74,12 +74,21 @@ function renderHeader(appState) {
 function renderBody(appState, randomMovieList) {
   switch (appState) {
     case is_recommending_movies:
-      return <div>Recommending Heaven!</div>;
+      return (
+        <Center>
+          <StyledLoader />
+        </Center>
+      );
 
     case recommendation_failed:
       return (
         <Center>
-          <StyledLoader />
+          <div>
+            <span role="img" aria-label="sad">
+              😫
+            </span>{" "}
+            Recommendation Failed. Please refresh the page.
+          </div>
         </Center>
       );
 
