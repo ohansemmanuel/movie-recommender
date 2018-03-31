@@ -5,6 +5,7 @@ import { Flex } from "../components/Layout";
 import { dont_show_details } from "../constants/strings";
 import Movie from "../components/Movie";
 import Header from "../components/Header";
+import { StyledButton } from "../components/Styled";
 import { connect } from "react-redux";
 
 const Movies = ({ movies }) => {
@@ -18,7 +19,7 @@ const Movies = ({ movies }) => {
   return (
     <div>
       <Header />
-      <Flex>
+      <Flex overflow="auto">
         {randomMovieList.map(({ id, poster, name, duration, year }) => {
           return (
             <Link to={`/movies/${id}`} key={id}>
@@ -32,6 +33,10 @@ const Movies = ({ movies }) => {
             </Link>
           );
         })}
+      </Flex>
+
+      <Flex justify="c">
+        <StyledButton> Get Recommended Movies </StyledButton>
       </Flex>
     </div>
   );

@@ -53,7 +53,7 @@ export const Flex = styled.div`
   align-items: center;
   width: 100%;
   height: ${props => (props.height ? props.height : "initial")}
-  overflow-x: auto;
+  overflow: ${props => (props.overflow ? props.overflow : "initial")};
 `;
 
 const bounceInLeft = keyframes`
