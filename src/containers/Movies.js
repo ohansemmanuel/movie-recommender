@@ -2,13 +2,14 @@ import React from "react";
 import _ from "lodash";
 import { Link } from "react-router-dom";
 import { Flex, Center } from "../components/Layout";
-import { dont_show_details } from "../constants/strings";
+import { dont_show_details, rec_err } from "../constants/strings";
 import Movie from "../components/Movie";
 import Header from "../components/Header";
 import { StyledButton, StyledLoader } from "../components/Styled";
 import formatMovieRatings from "../utils/formatMovieRatings";
 import { connect } from "react-redux";
 import { recommendMovies, setAppState } from "../actions";
+import displayToast from "../utils/displayToast";
 import {
   is_recommending_movies,
   recommendation_failed,
@@ -34,13 +35,10 @@ const Movies = ({ movies, recommendMovies, appState, setAppState }) => {
     try {
       ratings = formatMovieRatings(undefined, undefined, movies);
     } catch (err) {
-      /**
-       * @todo - show error via toast
-       */
       console.error(err);
-      alert(
-        "Please click on the movie posters and rate at least 3 movies to get a personalized oldies recommendation"
-      );
+      displayToast(rec_err, {
+        type: "error"
+      });
     }
 
     if (ratings) {

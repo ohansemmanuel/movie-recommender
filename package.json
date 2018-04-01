@@ -14,6 +14,7 @@
     "react-scripts": "1.1.1",
     "react-slick": "^0.22.3",
     "react-stars": "^2.2.5",
+    "react-toastify": "^3.4.3",
     "redux": "^3.7.2",
     "redux-devtools": "^3.4.1",
     "redux-devtools-diff-monitor": "^5.0.5",

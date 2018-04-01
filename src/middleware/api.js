@@ -12,7 +12,8 @@ import {
 /**
  * @todo Serve this url from an env var.
  */
-const BASE_URL = "https://recommender-service.herokuapp.com";
+// const BASE_URL = "https://recommender-service.herokuapp.com";
+const BASE_URL = "http://localhost:5000";
 
 /*
   1. This custom middleware will intercept actions with a payload 
