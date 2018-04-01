@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 import { Link } from "react-router-dom";
 import { Flex, Center } from "../components/Layout";
-import { dont_show_details, rec_err } from "../constants/strings";
+import { dont_show_details, rec_err, rec_success } from "../constants/strings";
 import Movie from "../components/Movie";
 import Header from "../components/Header";
 import { StyledButton, StyledLoader } from "../components/Styled";
@@ -28,7 +28,7 @@ const Movies = ({ movies, recommendMovies, appState, setAppState }) => {
   const movieList = _.values(usableMovies);
   //randomize the order of the movie list
   const randomMovieList = _.shuffle(movieList);
-
+  //handle recommendations
   const getRecommendations = () => {
     let ratings;
 
@@ -46,6 +46,10 @@ const Movies = ({ movies, recommendMovies, appState, setAppState }) => {
       setAppState(is_recommending_movies);
     }
   };
+  //success toast msg
+  if (appState === recommendation_successful) {
+    displayToast(rec_success);
+  }
 
   return (
     <div style={{ height: "100%" }}>
