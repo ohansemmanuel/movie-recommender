@@ -1,8 +1,11 @@
 import { show_details } from "../constants/strings";
 import { keyframes } from "styled-components";
 import theme from "../constants/theme";
+import { media } from "../components/Layout";
 /**
  * utils that exist (mostly) to extend certain component styles.
+ * NB: in the media.handheld declarations, every first declaration appears to be ignored. This may be a bug with the styled-components lib?
+ * @todo reproduce and file an issue.
  */
 
 const removeTransform = keyframes`
@@ -27,6 +30,13 @@ export const styledMovie = {
         transform: translateX(100px) translateY(100px);
         opacity: 0;
         animation: ${removeTransform} 500ms forwards;
+        ${media.handheld`
+          top: 1%;
+          left: 10px;
+          width: 127px;
+          height: 200px;
+          top: 0;
+        `}
       `;
     }
   },
@@ -47,6 +57,11 @@ export const styledMovie = {
         color: #ECF0F1;
         margin-bottom: 5px;
         overflow: initial;
+        ${media.handheld`
+          font-size: 1.2rem; 
+          font-size: 1.2rem;
+          padding-top: 50px;
+        `}
       `;
     }
   },

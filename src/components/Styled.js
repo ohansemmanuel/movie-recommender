@@ -41,6 +41,12 @@ export const StyledMovieContainer = styled.section`
 
 export const StyledMovieDetailsContainer = styled.div`
   padding-left: 35%;
+
+  ${media.handheld`
+    padding: 45% 0 0 0;
+    position: relative;
+    min-height: 100vh;
+  `};
 `;
 
 export const StyledHeader = Flex.extend`
@@ -51,9 +57,7 @@ export const StyledHeader = Flex.extend`
     position: relative;
     z-index: 10000;
   }
-  .header__item:nth-child(3) {
-    right: 30px;
-  }
+
   .header__item:nth-child(2) {
     margin: 0 auto;
   }
@@ -63,6 +67,9 @@ export const StyledHeader = Flex.extend`
   > a {
     position: absolute;
     right: 20px;
+    ${media.handheld`
+      text-decoration: underline;
+    `};
   }
   > *:hover {
     cursor: pointer;
