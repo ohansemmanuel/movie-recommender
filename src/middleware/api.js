@@ -82,14 +82,26 @@ function formatData(data) {
   return new Promise((resolve, reject) => {
     const movies = JSON.parse(data.movies);
     const movieTitles = _.values(movies.title);
+    //lower case for all titles
+    _.each(movieTitles, (title, index) => {
+      movieTitles[index] = title.toLowerCase();
+    });
+    console.log(movieTitles);
     let newMovieState = {};
 
-    const filteredMovies = _.filter(defaultMoviesState, movie =>
-      _.includes(movieTitles, movie.name)
+    const filteredMoviesByName = _.filter(defaultMoviesState, movie =>
+      _.includes(movieTitles, movie.name.toLowerCase())
     );
+    const filteredMoviesBySubstitute = _.filter(defaultMoviesState, movie => {
+      if (movie.substitute) {
+        return _.includes(movieTitles, movie.substitute.toLowerCase());
+      } else {
+        return null;
+      }
+    });
 
     //compute new movie state
-    _.each(filteredMovies, movie => {
+    _.each([...filteredMoviesByName, ...filteredMoviesBySubstitute], movie => {
       newMovieState = {
         ...newMovieState,
         [movie.id]: movie

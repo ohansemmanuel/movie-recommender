@@ -151,7 +151,7 @@ export const movies = [
     substitute: "The Sheriff 3"
   },
   {
-    name: "The Spy Family",
+    name: "My Spy Family",
     poster: "https://i.imgur.com/pCiWbmx.png",
     genre: "spy drama",
     year: "2007",
@@ -160,10 +160,10 @@ export const movies = [
     details:
       "My Spy Family is a children's Live action comedy series created by Paul Alexander. The show is about the Family Bannon, who all have strong spy links.",
     id: "14",
-    substitute: "My Spy Family"
+    substitute: "The Spy Family"
   },
   {
-    name: "The Will Fight Those Aliens",
+    name: "They Will Fight Those Aliens",
     poster: "https://i.imgur.com/LyroXVM.png",
     genre: "sci-fi, action",
     year: "2007",
@@ -172,7 +172,7 @@ export const movies = [
     details:
       "Warring Alien and Predator races descend on a rural Colorado town, where unsuspecting residents must band together for any chance of survival.",
     id: "15",
-    substitute: "They Will Fight Those Aliens"
+    substitute: "We Will Fight Those Aliens"
   },
   {
     name: "Better Criminal",
