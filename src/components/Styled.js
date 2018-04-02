@@ -29,6 +29,9 @@ export const StyledMovieContainer = styled.section`
   }
 
   ${media.handheld`
+    min-height: 100vh;
+    padding: 10vh 2vw 10vh 2vw;
+    border-radius: 0;
     &:before {display: none};
     &:after {display: none}
   `};
