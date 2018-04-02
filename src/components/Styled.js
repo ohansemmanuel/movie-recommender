@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import theme from "../constants/theme";
 import { styledMovie } from "../utils/styled";
-import { Flex } from "./Layout";
+import { Flex, media } from "./Layout";
 
 export const StyledMovieContainer = styled.section`
   position: relative;
@@ -27,6 +27,11 @@ export const StyledMovieContainer = styled.section`
     font-size: 2vw;
     color: rgba(255, 255, 255, 0.03);
   }
+
+  ${media.handheld`
+    &:before {display: none};
+    &:after {display: none}
+  `};
 `;
 
 export const StyledMovieDetailsContainer = styled.div`
