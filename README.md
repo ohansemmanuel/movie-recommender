@@ -12,13 +12,19 @@ To understand the background story, read my article, \*
 
 Hey, read it :)
 
+<br />
+
 <h2 align="center">What does this do?</h2>
 If you read the article above, you should get a sense of what this is about.
 
 This web app, which I call the Oldies Recommender, will recommend movies you'll love - based on your rating of a few movies.
 
+<br />
+
 <h2 align="center">Where can I try this out? </h2>
 There you go 👉 <a href="https://oldies-recommender.herokuapp.com" target="_blank" rel="noopener noreferrer">The Oldies Recommender</a>
+
+<br />
 
 <h2 align="center">How do I run the app locally?</h2>
 
@@ -43,7 +49,7 @@ touch .env
 REACT_APP_API_URL="..."
 ```
 
-Technically, you should replace this with an instance of the ML <a href="https://github.com/ohansemmanuel/recommender-service" target="_blank" rel="noopener noreferrer">recommender service</a>. Please see the service's README to set it up - if you must :)
+Technically, you should replace this with an instance url of the ML <a href="https://github.com/ohansemmanuel/recommender-service" target="_blank" rel="noopener noreferrer">recommender service</a>. Please see the service's README to set it up - if you must :)
 
 Something like this should do:
 
@@ -63,9 +69,9 @@ npm install
 npm start
 ```
 
-<h2 align="center">Does this explanation suck?</h2>
+<br />
 
-I'll refactor pretty soon. It never gets completed, does it? :(
+<h2 align="center">Does this explanation suck?</h2>
 If you have issues setting this up, I'll be happy to help.
 
 Catch you later! 👊
