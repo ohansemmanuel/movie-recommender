@@ -1,6 +1,7 @@
 //centralize API calls here.
 import axios from "axios";
 import _ from "lodash";
+import runtimeEnv from "@mars/heroku-js-runtime-env";
 import { RECOMMEND_MOVIES, APP_STATE } from "../actions";
 import { CURRENT_USER } from "../utils/formatMovieRatings";
 import { movies as defaultMoviesState } from "../staticData";
@@ -9,20 +10,19 @@ import {
   recommendation_failed
 } from "../constants/strings";
 
-/**
- * @todo Serve this url from an env var.
- */
-// const BASE_URL = "https://recommender-service.herokuapp.com";
-const BASE_URL = "http://localhost:5000";
-
 /*
-  1. This custom middleware will intercept actions with a payload 
-  containing a RECOMMEND_MOVIES key. 
+  1. This custom middleware will intercept actions with a payload
+  containing a RECOMMEND_MOVIES key.
   2. Make API post request
   3. Format the received data to match the App's state movies key
   4. Dispatch a clone of the action - but without the RECOMMEND_MOVIES key
   5. Em, that's it!
  */
+
+// Load the env object.
+const env = runtimeEnv();
+const BASE_URL = env.REACT_APP_API_URL;
+
 export function getRecommendations({ getState, dispatch }) {
   return next => action => {
     if (action.payload[RECOMMEND_MOVIES] === RECOMMEND_MOVIES) {
