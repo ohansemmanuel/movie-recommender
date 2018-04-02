@@ -391,10 +391,10 @@ export const movies = [
     genre: "detective drama",
     poster: "https://i.imgur.com/HyVzHwt.png",
     year: "1968",
-    duration:
-      "Police detective Joe Leland investigates the murder of a homosexual man. While investigating, he discovers links to official corruption in New York City in this drama that delves into a world of sex and drugs.",
+    duration: "1h 54min",
     trailer: "https://youtu.be/9odRuy4D-VA",
-    details: "",
+    details:
+      "Police detective Joe Leland investigates the murder of a homosexual man. While investigating, he discovers links to official corruption in New York City in this drama that delves into a world of sex and drugs.",
     id: "34",
     substitute: "The Serious Detective"
   }
