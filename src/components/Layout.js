@@ -28,25 +28,6 @@ export const Center = styled.div`
       : "transparent"};
 `;
 
-export const Backdrop = Center.extend`
-  &:before {
-    content: "OLDIE MOVIE";
-    position: fixed;
-    top: 18vh;
-    left: 10vw;
-    font-size: 9vw;
-    color: rgba(255, 255, 255, 0.03);
-  }
-  &:after {
-    content: "RECOMMENDER";
-    position: fixed;
-    top: 38vh;
-    left: 11vw;
-    font-size: 2vw;
-    color: rgba(255, 255, 255, 0.03);
-  }
-`;
-
 export const Flex = styled.div`
   display: flex;
   flex-direction: ${props => {

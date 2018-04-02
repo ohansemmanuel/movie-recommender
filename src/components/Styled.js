@@ -10,6 +10,23 @@ export const StyledMovieContainer = styled.section`
   background: ${theme.movieContainerBg};
   border-radius: 15px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+
+  &:before {
+    content: "OLDIE MOVIE";
+    position: fixed;
+    top: 18vh;
+    left: 10vw;
+    font-size: 9vw;
+    color: rgba(255, 255, 255, 0.03);
+  }
+  &:after {
+    content: "RECOMMENDER";
+    position: fixed;
+    top: 38vh;
+    left: 11vw;
+    font-size: 2vw;
+    color: rgba(255, 255, 255, 0.03);
+  }
 `;
 
 export const StyledMovieDetailsContainer = styled.div`

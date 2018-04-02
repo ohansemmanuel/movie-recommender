@@ -11,7 +11,7 @@ const Root = ({ store }) => (
       <Router>
         <App />
       </Router>
-      <DevTools />
+      {/* <DevTools /> */}
     </section>
   </Provider>
 );
