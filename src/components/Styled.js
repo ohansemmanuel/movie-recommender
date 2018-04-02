@@ -5,6 +5,7 @@ import { Flex, media } from "./Layout";
 
 export const StyledMovieContainer = styled.section`
   position: relative;
+  z-index: 1000;
   width: 640px;
   height: 390px;
   background: ${theme.movieContainerBg};
@@ -46,6 +47,13 @@ export const StyledHeader = Flex.extend`
   padding: 30px;
   height: 70px;
 
+  > .header__item {
+    position: relative;
+    z-index: 10000;
+  }
+  .header__item:nth-child(3) {
+    right: 30px;
+  }
   .header__item:nth-child(2) {
     margin: 0 auto;
   }
