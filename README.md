@@ -1,5 +1,9 @@
 <p align="center"><a href="#" target="_blank" rel="noopener noreferrer"> <img src="https://image.ibb.co/evGJH7/Artboard_1_3x.png" alt="Recommender Service logo"></a></p>
 
+<p align="center"><img src="https://preview.ibb.co/jW2Pux/dev_rec_sys.png" alt="preview" border="0"></p>
+
+<br />
+
 <h2 align="center">Introduction</h2>
 You see the 'P2EM' in the Logo above? Do you have any idea what that means?
 
