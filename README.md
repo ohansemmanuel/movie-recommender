@@ -3,12 +3,10 @@
 <p align="center"><img src="https://preview.ibb.co/jW2Pux/dev_rec_sys.png" alt="preview" border="0"></p>
 
 <br />
-View the DEMO here, <a href="https://youtu.be/_j1nSTd7e_I" target="_blank" rel="noopener noreferrer">https://youtu.be/\_j1nSTd7e_I</a>
+View the DEMO here: <a href="https://youtu.be/_j1nSTd7e_I" target="_blank" rel="noopener noreferrer">https://youtu.be/\_j1nSTd7e_I</a>
 
 <h2 align="center">Introduction</h2>
-You see the 'P2EM' in the Logo above? Do you have any idea what that means?
-
-Let me help you.
+You see the 'P2EM' in the Logo above?
 
 P2EM refers to _"Plan to Embarass Myself"_
 
@@ -22,7 +20,7 @@ Hey, read it :)
 <h2 align="center">What does this do?</h2>
 If you read the article above, you should get a sense of what this is about.
 
-This web app, which I call the Oldies Recommender, will recommend movies you'll love - based on your rating of a few movies.
+This web app, which I call the Oldies Recommender, will recommend old movies you'll love - based on your rating of a few movies.
 
 <br />
 
