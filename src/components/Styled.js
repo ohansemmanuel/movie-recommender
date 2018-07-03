@@ -82,8 +82,9 @@ export const StyledMovie = styled.div`
   cursor: pointer;
   ${props => styledMovie.moviePosterWithoutDetails(props.showDetails)};
   animation-delay: ${props =>
-      props.animationDelay ? props.animationDelay : "initial"}
-    .movie__poster {
+    props.animationDelay ? props.animationDelay : "initial"};
+
+  .movie__poster {
     width: ${theme.movieWidth};
     height: 191px;
     margin-bottom: 6px;

@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
+import { getRecommendations } from "../middleware/api";
 import rootReducer from "../reducers";
 
 const configureStore = initialState =>
-  createStore(rootReducer, initialState, applyMiddleware(thunk));
+  createStore(rootReducer, initialState, applyMiddleware(getRecommendations));
 
 export default configureStore;
