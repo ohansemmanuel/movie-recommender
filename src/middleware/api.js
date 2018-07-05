@@ -1,7 +1,7 @@
 //centralize API calls here.
 import axios from "axios";
 import _ from "lodash";
-import { RECOMMEND_MOVIES, APP_STATE } from "../actions";
+import { RECOMMEND_MOVIES, APP_STATE } from "../actions/types";
 import { CURRENT_USER } from "../utils/formatMovieRatings";
 import { movies as defaultMoviesState } from "../staticData";
 import {
